@@ -1,0 +1,53 @@
+{
+  "imports": [
+  {
+      "name": "RxSwift",
+      "path": "Carthage/Checkouts/RxSwift/RxSwift"
+  }
+  ],
+  "rules": [
+  {
+      "name": "Coordinator",
+      "pattern": "Coordinator?$",
+      "use": [
+        "ViewControllerDelegate"
+      ]
+    },
+    {
+      "name": "ViewControllerDelegate",
+      "pattern": "ViewControllerDelegate?$"
+    },
+    {
+      "name": "ViewController",
+      "pattern": "ViewController?$",
+      "use": [
+        "ViewModel",
+        "ViewControllerDelegate"
+      ],
+      "forbidden": [
+        "Model"
+      ]
+    },
+    {
+      "name": "ViewModel",
+      "pattern": "ViewModel?$",
+      "use": [
+        "Model"
+      ]
+    },
+    {
+      "name": "Model",
+      "pattern": "Model?$"
+    },
+    {
+      "name": "Helpers",
+      "pattern": "Helpers?$",
+      "isSafePath": true
+    },
+    {
+      "name": "RxSwift",
+      "pattern": "RxSwift?$",
+      "isSafePath": true
+    }
+  ]
+}
