@@ -42,8 +42,7 @@ class FolderViewController: UITableViewController {
 
     @IBAction func createNewFolder(_: Any) {
         modalTextAlert(title: .createFolder, accept: .create, placeholder: .folderName) { string in
-            self.viewModel.create(folderNamed: string)
-            self.dismiss(animated: true)
+            
         }
     }
 
